@@ -28,34 +28,8 @@ header h1 {
   margin: 0;
 }
 
-/* Navigation styles */
-nav {
-  background-color: #f1f1f1;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-end;
-}
-
-nav ul li {
-  margin-right: 10px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  padding: 5px;
-}
-
 /* Home, About, Contact styles */
 .home-container,
-.about-container,
 .contact-container {
   padding: 20px;
   border: 1px solid #ccc;
@@ -440,4 +414,98 @@ button {
   font-size: 14px;
   margin-top: 5px;
   color: #888;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #090909;
+  padding: 10px;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item {
+  margin-left: 10px;
+  color: #f4f6fa;
+  padding: 8px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #f9f2f2;
+  padding: 5px;
+}
+.navbar-link:hover {
+  background-color: #5599ed;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.about-container {
+  padding: 20px;
+  background-color: #fefdfc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.home-container {
+  width: 96.7%;
+  /* height: calc(100vh - 64px);  */
+  /* Subtract the navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("./home-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.home-title {
+  font-size: 24px;
+  padding-top: 45px;
+  margin-bottom: 20px;
+}
+
+.home-content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.home-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  max-width: calc(100% - 40px); /* Subtract 40px for padding */
+}
+
+.home-description {
+  font-size: 16px;
+  line-height: 1.5;
 }

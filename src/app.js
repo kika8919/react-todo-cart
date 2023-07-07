@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
+import homeImage from "./home-image.jpg";
 
 const AppContext = createContext();
 
@@ -99,19 +100,22 @@ const OnlineShoppingStore = () => {
       id: 1,
       name: "Product 1",
       price: 19.99,
-      image: "https://example.com/product1.jpg",
+      image:
+        "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZHVjdCUyMGluJTIwc2hvcHBpbmclMjBjYXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
     },
     {
       id: 2,
       name: "Product 2",
       price: 29.99,
-      image: "https://example.com/product2.jpg",
+      image:
+        "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZHVjdCUyMGluJTIwc2hvcHBpbmclMjBjYXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60",
     },
     {
       id: 3,
       name: "Product 3",
       price: 39.99,
-      image: "https://example.com/product3.jpg",
+      image:
+        "https://plus.unsplash.com/premium_photo-1683288401601-0d6066aaef51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3QlMjBpbiUyMHNob3BwaW5nJTIwY2FydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
     },
     // Add more products as needed
   ];
@@ -172,19 +176,49 @@ const APIIntegration = () => {
   );
 };
 
-const Home = () => (
-  <div className="home-container">
-    <h2>Welcome to the React App!</h2>
-    <p>This is a simple to-do list and shopping cart application.</p>
-  </div>
-);
+const Home = () => {
+  return (
+    <div className="home-container">
+      <h2 className="home-title">Welcome to the React Todo Cart App!</h2>
+      <div className="home-content">
+        <p className="home-description">
+          We are a team of dedicated developers who have created this app to
+          help you stay organized and manage your tasks and shopping needs
+          efficiently. With our intuitive interface and powerful features, you
+          can easily manage your to-do list, keep track of completed tasks, and
+          have a seamless shopping experience. Our goal is to simplify your life
+          and enhance your productivity with the React Todo Cart App.
+        </p>
+        <img src={homeImage} alt="Company Logo" className="home-image" />
+      </div>
+    </div>
+  );
+};
 
-const About = () => (
-  <div className="about-container">
-    <h2>About</h2>
-    <p>Information about the company, team, or project goes here.</p>
-  </div>
-);
+const About = () => {
+  return (
+    <div className="about-container">
+      <h2 className="about-title">About</h2>
+      <p className="about-description">
+        Welcome to the React Todo Cart App! This application is designed to help
+        you manage your tasks and shopping list in an organized way. With the
+        Todo List feature, you can create and manage your daily tasks, mark them
+        as completed, and stay on top of your priorities. The Shopping Cart
+        feature allows you to add items to your cart, keep track of the products
+        you want to purchase, and easily manage your shopping experience. Our
+        app aims to simplify your life by bringing together your to-do list and
+        shopping needs in one place.
+      </p>
+      <p className="about-description">
+        Whether you need to stay organized or make sure you don't forget any
+        items while shopping, the React Todo Cart App has got you covered. With
+        a user-friendly interface and intuitive design, managing your tasks and
+        shopping list has never been easier. Experience the convenience and
+        efficiency of our app and start organizing your life today!
+      </p>
+    </div>
+  );
+};
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -292,23 +326,33 @@ const App = () => {
   return (
     <Router>
       <AppProvider>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
+        <div className="app-container">
+          <nav className="navbar">
+            <ul className="navbar-list">
+              <li className="navbar-item">
+                <Link to="/" className="navbar-link">
+                  Home
+                </Link>
               </li>
-              <li>
-                <Link to="/about">About</Link>
+              <li className="navbar-item">
+                <Link to="/about" className="navbar-link">
+                  About
+                </Link>
               </li>
-              <li>
-                <Link to="/contact">Contact</Link>
+              <li className="navbar-item">
+                <Link to="/contact" className="navbar-link">
+                  Contact
+                </Link>
               </li>
-              <li>
-                <Link to="/todo-list">Todo List</Link>
+              <li className="navbar-item">
+                <Link to="/todo-list" className="navbar-link">
+                  Todo List
+                </Link>
               </li>
-              <li>
-                <Link to="/shop">Shopping</Link>
+              <li className="navbar-item">
+                <Link to="/shop" className="navbar-link">
+                  Shopping
+                </Link>
               </li>
             </ul>
           </nav>
@@ -331,8 +375,6 @@ const App = () => {
               <ShoppingCart />
             </Route>
           </Switch>
-
-          {/* <APIIntegration /> */}
         </div>
       </AppProvider>
     </Router>
