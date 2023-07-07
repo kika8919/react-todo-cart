@@ -29,7 +29,7 @@ header h1 {
 }
 
 /* Home, About, Contact styles */
-.home-container,
+
 .contact-container {
   padding: 20px;
   border: 1px solid #ccc;
@@ -131,7 +131,15 @@ button {
   color: rgb(226, 147, 147);
   margin-top: 5px;
 }
-
+.popup {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 /* Shopping cart styles */
 .cart-container {
   padding: 20px;
@@ -377,6 +385,7 @@ button {
 .shopping-cart h2 {
   font-size: 24px;
   margin-bottom: 10px;
+ 
 }
 
 .shopping-cart ul {
@@ -407,6 +416,7 @@ button {
 
 .shopping-cart .subtotal {
   font-weight: bold;
+  
   margin-top: 10px;
 }
 
@@ -414,7 +424,9 @@ button {
   font-size: 14px;
   margin-top: 5px;
   color: #888;
+ 
 }
+
 
 .navbar {
   display: flex;
