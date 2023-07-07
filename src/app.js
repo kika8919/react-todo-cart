@@ -79,8 +79,8 @@ const ShoppingCart = () => {
             <div className="product-info">
               <img src={item.image} alt={item.name} />
               <span>{item.name}</span>
-              <span>${item.price.toFixed(2)}</span>
             </div>
+            <span>${item.price.toFixed(2)}</span>
             <button onClick={() => removeItem(item.id)}>Remove</button>
           </li>
         ))}
@@ -224,50 +224,40 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Submit the form logic goes here
-
-    // Clear the form fields
-    setName("");
-    setEmail("");
-    setMessage("");
-
-    // Show the popup
-    setShowPopup(true);
+    // Implement form submission logic here
   };
 
   return (
     <div className="contact-container">
-      <h2>Contact Us</h2>
+      <h2>Contact</h2>
       <form className="contact-form" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
+          className="contact-input"
         />
         <input
           type="email"
-          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          className="contact-input"
         />
         <textarea
-          placeholder="Message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
-        <button type="submit">Submit</button>
+          placeholder="Message"
+          className="contact-textarea"
+        />
+        <button type="submit" className="contact-submit-button">
+          Submit
+        </button>
       </form>
-
-      {showPopup && (
-        <div className="popup">
-          <p>Your information has been submitted!</p>
-        </div>
-      )}
     </div>
   );
 };
