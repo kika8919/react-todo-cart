@@ -499,3 +499,12 @@ button {
   font-size: 16px;
   line-height: 1.5;
 }
+.popup {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
